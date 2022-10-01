@@ -29,6 +29,13 @@
 
       const people = [
         'Beck, Glenn',
+        'Benson, Leana',
+        'Bent, Silas',
+        'Bentsen, Lloyd',
+        'Berger, Ric',
+        'Bergman, Ingmar',
+        'Berio, Luciano',
+        'Berle, Milton',
         'Becker, Carl',
         'Beckett, Samuel',
         'Beddoes, Mick',
@@ -43,13 +50,6 @@
         'Benjamin, Walter',
         'Benn, Tony',
         'Bennington, Chester',
-        'Benson, Leana',
-        'Bent, Silas',
-        'Bentsen, Lloyd',
-        'Berger, Ric',
-        'Bergman, Ingmar',
-        'Berio, Luciano',
-        'Berle, Milton',
         'Berlin, Irving',
         'Berne, Eric',
         'Bernhard, Sandra',
@@ -73,17 +73,30 @@
 
       // Array.prototype.filter()
       // 1. Filter the list of inventors for those who were born in the 1500's
+      const inventors1500 = inventors.filter(inventor => inventor.year >= 1500 && inventor.year <= 1600);
 
+      console.table(inventors1500);
       // Array.prototype.map()
       // 2. Give us an array of the inventors' first and last names
+      const inventorFullName = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+
+      console.log(inventorFullName);
 
       // Array.prototype.sort()
       // 3. Sort the inventors by birthdate, oldest to youngest
+      const sortedInventorList = inventors.sort((a,b) => a.year - b.year);
 
+      console.table(sortedInventorList);
       // Array.prototype.reduce()
       // 4. How many years did all the inventors live?
+      const inventorYearsLived = inventors.reduce((total, inventor) => total + (inventor.passed - inventor.year), 0);
+
+      console.log(inventorYearsLived);
 
       // 5. Sort the inventors by years lived
+      const sortedInventorYearsList = inventors.sort((a,b) => (a.passed - a.year) - (b.passed - b.year));
+
+      console.table(sortedInventorYearsList);
 
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
@@ -91,8 +104,16 @@
       // const category = document.querySelector('.mw-category');
       // const links = Array.from(category.querySelectorAll('a'));
 
+      // const linksTextContent = links.map(link => link.textContent);
+      // const filteredByDe = linksTextContent.filter(streetName => streetName.includes('de'));
+
+      // console.log(filteredByDe);
+
       // 7. sort Exercise
       // Sort the people alphabetically by last name
+      const sorted = people.sort();
+
+      console.log(sorted);
 
       // 8. Reduce Exercise
       // Sum up the instances of each of these
@@ -113,6 +134,18 @@
         'truck'
       ];
 
+      const countVehicles = function(object,item) {
+        if(!object[item]){
+            object[item] = 0;
+        }
+        object[item]++;
+        return object;
+      }
+
+      const vehicleCount = data.reduce(countVehicles, {});
+
+      console.log(vehicleCount);
+
       // ## Array Cardio Day 2
 
     const people2 = [
@@ -132,15 +165,33 @@
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    const checkAge = person2 => (currentYear - person2.year) >= 19
+    const someoneOver19 = people2.some(checkAge);
+
+    console.log(someoneOver19);
     // Array.prototype.every() // is everyone 19 or older?
+    const everyoneOver19 = people2.every(checkAge);
+
+    console.log(everyoneOver19);
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
+    const foundComment = comments.find(comment => comment.id == 823423);
+
+    console.log(foundComment);
 
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+    const indexOfId = comments.findIndex(comment => comment.id == 823423);
+
+    comments.splice(indexOfId, 1);
+
+    console.table(comments);
+
     </script>
   </body>
 </html>
