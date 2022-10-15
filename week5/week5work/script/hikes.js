@@ -63,7 +63,7 @@ const hikeList =
     showHikeList() 
     {
         this.parentElement.innerHTML = '';
-        renderHikeList(this.parentElement, this.getAllHikes())
+        renderHikeList(this.parentElement, this.getAllHikes());
         this.addHikeListener();
         this.backButton.classList.add('hidden');
     }
@@ -73,7 +73,7 @@ const hikeList =
         const hike = this.getHikeByName(hikeName);
         this.parentElement.innerHTML = '';
         this.parentElement.appendChild(renderOneHikeFull(hike));
-        this.backButton.classList.remove('hidden');
+        this.backButton.classList.remove('hidden'); 
     }
     // in order to show the details of a hike click we will need to attach a listener AFTER the list of hikes has been built. 
     // The function below does that.
