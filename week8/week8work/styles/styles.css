@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+  font-family: Montserrat, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.hidden {
+    display: none;
+}
+
+#pokemonlist td {
+  cursor: pointer;
+}
+
+#detailsbox {
+  flex: 1 0 15em;
+  margin-top: 25px;
+  padding: 1em;
+  text-align: center;
+  border: 2px solid;
+}
+
+#detailsbox dl {
+  border: 1px solid;
+  text-align: left;
+}
+
+#detailsbox dt {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+#detailsbox dd {
+    margin-bottom: 5px;
+}
+
+#image {
+    max-width: 100%;
+    min-width: 200px;
+    height: auto;
+}
+
+#pokemonlist {
+  /* display: flex; */
+  flex-flow: row wrap;
+  list-style-type: none;
+}
+
+#pokemonlist thead {
+  background-color: lightgray;
+}
+
+#pokemonlist tr {
+  border: 1px solid;
+  padding: 0.5em;
+  height: 44px;
+}
+
+#pokemonlist tr:nth-child(even) {
+  background-color: azure;
+}
+
+#pokemonlist tr:hover {
+  background-color: bisque;
+  text-decoration: underline;
+}
+
+.pagination {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pagination a {
+    color: black;
+    padding: 8px 8px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+/* Style the active/current link */
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+/* Add a grey background color on mouse-over */
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
