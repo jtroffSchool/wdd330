@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+        <title>Local Quakes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            #quakeList
+            {
+                width: 90%;
+                margin: 0 auto;
+                background-color: silver;
+                padding: 0.5em;
+            }
+            #quakeList li
+            {
+                padding: 1em;
+                margin: 1em 0.5em;
+                background-color: rgb(236, 238, 225);
+                list-style-type: none;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+              <heading>
+                <nav><ul id="mainNav"></ul></nav>
+              </heading>
+            </nav>
+        </header>
+        <main id="content">
+            <h1>Quake List</h1>
+            <ul id="quakeList" class="hikeStyles"></ul>
+        </main>
+
+        <!-- javascript -->
+      <script src="scripts/main.js" type="module"></script>
+    </body>
+</html>
