@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='description' content='A JavaScript Quiz Game'>
+<title>Who's That Pokemon?</title>
+<link rel='stylesheet' href='styles/styles.css'>
+</head>
+<body>
+<section>
+    <header>
+        <h1>
+            <img id="pokeball" src="images/pokeball.png" alt="Pokeball">
+            Who's That Pokemon?
+            <img id="pokeball" src="images/pokeball.png" alt="Pokeball">
+        </h1>
+    </header>
+    <div id='questionHint'></div>
+    <div id='questionImage'></div>
+    <button id='generate'>Generate Question</button>
+    <label for="generations">Choose a pokemon generation:</label>
+    <select name="generations" id="generations">
+        <option value="gen_1">Gen 1</option>
+        <option value="gen_2">Gen 2</option>
+        <option value="gen_3">Gen 3</option>
+        <option value="gen_4">Gen 4</option>
+    </select>
+    <label for="mode">Choose a mode:</label>
+    <select name="mode" id="mode">
+        <option value="normal">Normal</option>
+        <option value="harder">Harder</option>
+    </select>
+    <form id='response'>
+        <input name='answer' type='text'>
+        <button type='submit'>Submit Answer</button>
+    </form>
+    <div id='result'></div>
+    <div id='resultImage'></div>
+</section>
+
+<script src='scripts/jtFinal.js'></script>
+</body>
